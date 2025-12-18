@@ -12,10 +12,10 @@ function activate(context) {
             const symbols = [];
 
             // Regular expression to match commands (defun c:commandName)
-            const regexCommand = /\s*defun\s+(C:[^\s\(]+)/gi;
+            const regexCommand = /\(\s*defun\s+(C:[^\s\(]+)/gi;
 
             // Regular expression to match functions (defun functionName)
-            const regexFunction = /\s*defun\s+([^\s\(]+)/gi;
+            const regexFunction = /\(\s*defun\s+([^\s\(]+)/gi;
 
             // Iterate through each line of the document to find matches
             for (let i = 0; i < document.lineCount; i++) {
