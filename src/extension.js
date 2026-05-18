@@ -14,8 +14,8 @@ function activate(context) {
             // Regular expression to match commands (defun c:commandName)
             const regexCommand = /\(\s*defun\s+(C:[^\s\(]+)/gi;
 
-            // Regular expression to match functions (defun functionName)
-            const regexFunction = /\(\s*defun\s+([^\s\(]+)/gi;
+            // Regular expression to match functions (defun functionName, excluding commands)
+            const regexFunction = /\(\s*defun\s+(?!C:)([^\s\(]+)/gi;
 
             // Iterate through each line of the document to find matches
             for (let i = 0; i < document.lineCount; i++) {
